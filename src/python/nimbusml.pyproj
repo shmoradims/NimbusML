@@ -571,6 +571,8 @@
     <Compile Include="nimbusml\tests\ensemble\__init__.py" />
     <Compile Include="nimbusml\tests\feature_extraction\text\test_sentiment.py" />
     <Compile Include="nimbusml\tests\idv\__init__.py" />
+    <Compile Include="nimbusml\tests\model_explanability\test_featurecontributioncalculator.py" />
+    <Compile Include="nimbusml\tests\model_explanability\__init__.py" />
     <Compile Include="nimbusml\tests\preprocessing\normalization\test_meanvariancescaler.py" />
     <Compile Include="tests\test_estimator_checks.py" />
     <Compile Include="nimbusml\tests\feature_extraction\text\test_lightlda.py" />
@@ -761,6 +763,7 @@
     <Folder Include="nimbusml\tests\data_type\" />
     <Folder Include="nimbusml\tests\decomposition\" />
     <Folder Include="nimbusml\tests\ensemble\" />
+    <Folder Include="nimbusml\tests\model_explanability\" />
     <Folder Include="nimbusml\tests\model_selection\" />
     <Folder Include="nimbusml\tests\multiclass\" />
     <Folder Include="nimbusml\tests\model_summary\" />
