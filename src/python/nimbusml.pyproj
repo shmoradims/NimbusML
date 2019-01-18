@@ -422,6 +422,8 @@
     <Compile Include="nimbusml\linear_model\poissonregressionregressor.py" />
     <Compile Include="nimbusml\linear_model\symsgdbinaryclassifier.py" />
     <Compile Include="nimbusml\loss.py" />
+    <Compile Include="nimbusml\model_explainability\featurecontributioncalculator.py" />
+    <Compile Include="nimbusml\model_explainability\__init__.py" />
     <Compile Include="nimbusml\model_selection\cv.py" />
     <Compile Include="nimbusml\model_selection\__init__.py" />
     <Compile Include="nimbusml\multiclass\onevsrestclassifier.py" />
@@ -744,6 +746,7 @@
     <Folder Include="nimbusml\internal\entrypoints\" />
     <Folder Include="nimbusml\internal\utils\" />
     <Folder Include="nimbusml\linear_model\" />
+    <Folder Include="nimbusml\model_explainability\" />
     <Folder Include="nimbusml\model_selection\" />
     <Folder Include="nimbusml\multiclass\" />
     <Folder Include="nimbusml\naive_bayes\" />

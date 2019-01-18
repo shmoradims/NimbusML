@@ -710,7 +710,13 @@
       "NewName": "TypeConverter",
       "Module": "preprocessing.schema",
       "Type": "Transform"
-    }
+    },
+    {
+      "Name": "Transforms.FeatureContributionCalculationTransformer",
+      "NewName": "FeatureContributionCalculator",
+      "Module": "model_explainability",
+      "Type": "Transform"
+    }	
   ],
   "Components": [
     {
