@@ -329,7 +329,7 @@ namespace Microsoft.MachineLearning.DotNetBridge
             //env.ComponentCatalog.RegisterAssembly(typeof(SaveOnnxCommand).Assembly);
             //env.ComponentCatalog.RegisterAssembly(typeof(TimeSeriesProcessingEntryPoints).Assembly);
             //env.ComponentCatalog.RegisterAssembly(typeof(ParquetLoader).Assembly);
-            env.ComponentCatalog.RegisterAssembly(typeof(ForecastExtensions).Assembly);
+            //env.ComponentCatalog.RegisterAssembly(typeof(ForecastExtensions).Assembly);
 
             using (var ch = host.Start("Executing"))
             {

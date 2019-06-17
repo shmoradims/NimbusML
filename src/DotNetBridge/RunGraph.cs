@@ -23,6 +23,12 @@ namespace Microsoft.MachineLearning.DotNetBridge
 {
     public unsafe static partial class Bridge
     {
+        private static Dictionary<string, PredictorModel> PredictorModelCache =
+            new Dictionary<string, PredictorModel>();
+
+        private static Dictionary<string, TransformModel> TransformModelCache =
+            new Dictionary<string, TransformModel>();
+
         // std:null specifier in a graph, used to redirect output to std::null
         const string STDNULL = "<null>";
 
@@ -166,8 +172,17 @@ namespace Microsoft.MachineLearning.DotNetBridge
                                 PredictorModel pm;
                                 if (!string.IsNullOrWhiteSpace(path))
                                 {
-                                    using (var fs = File.OpenRead(path))
-                                        pm = new PredictorModelImpl(host, fs);
+                                    if (PredictorModelCache.ContainsKey(path))
+                                    {
+                                        pm = PredictorModelCache[path];
+                                    }
+                                    else
+                                    {
+                                        using (var fs = File.OpenRead(path))
+                                            pm = new PredictorModelImpl(host, fs);
+
+                                        PredictorModelCache.Add(path, pm);
+                                    }
                                 }
                                 else
                                     throw host.Except("Model must be loaded from a file");
@@ -177,8 +192,17 @@ namespace Microsoft.MachineLearning.DotNetBridge
                                 TransformModel tm;
                                 if (!string.IsNullOrWhiteSpace(path))
                                 {
-                                    using (var fs = File.OpenRead(path))
-                                        tm = new TransformModelImpl(host, fs);
+                                    if (TransformModelCache.ContainsKey(path))
+                                    {
+                                        tm = TransformModelCache[path];
+                                    }
+                                    else
+                                    {
+                                        using (var fs = File.OpenRead(path))
+                                            tm = new TransformModelImpl(host, fs);
+
+                                        TransformModelCache.Add(path, tm);
+                                    }
                                 }
                                 else
                                     throw host.Except("Model must be loaded from a file");
